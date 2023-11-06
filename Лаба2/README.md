@@ -26,6 +26,20 @@
     CMD ["python", "app.py"]
 
 ### В общем виде: 
+  
+
+    FROM python:3.8-slim  
+      
+    WORKDIR /app  
+    COPY requirements.txt .  
+    RUN pip install --no-cache-dir -r requirements.txt  
+      
+    COPY app.py /app/  
+    EXPOSE 5000  
+      
+    USER nobody  
+      
+    CMD ["python", "app.py"]
 
 ## Плохая практика
 ### Плохая практика №1: Использование последней версии базового образа Python без явного указания версии.  
@@ -48,11 +62,22 @@
     CMD ["python", "app.py"]
 
 ### В общем виде:
+
+    FROM python:latest  
+    RUN pip install Flask  
+    WORKDIR /app  
+    COPY . /app/  
+      
+    EXPOSE 5000  
+      
+    USER root  
+      
+    CMD ["python", "app.py"]
+
 # Итог 
 #### Запуск :  `run -p 5000:5000 my_image`
-Хороший докер:
+Хороший докер: ![Image alt](https://github.com/Satori-Tamaba/Parovyye_kotlety/blob/main/%D0%9B%D0%B0%D0%B1%D0%B02/images/%D1%85%D0%BE%D1%80%D0%BE%D1%88.png?raw=true)
 
-
-Плохой докер:
+Плохой докер:![Image alt](https://github.com/Satori-Tamaba/Parovyye_kotlety/blob/main/%D0%9B%D0%B0%D0%B1%D0%B02/images/%D0%BF%D0%BB%D0%BE%D1%85.png)
 
 
