@@ -19,7 +19,7 @@ jobs:
     - name: Run the Docker image
       run: docker run -d lab3:latest
     - name: Login to Dockerhub
-      run: docker login -u Andrucrut -p Z9500405656z
+      run: docker login -u andrucrut -p Z9500405656z
     - name: Create tag for docker
       run: docker tag lab3 Andrucrut/lab3:latest
     - name: Push image to Dockerhub
