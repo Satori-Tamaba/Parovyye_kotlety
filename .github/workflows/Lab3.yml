@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag lab3:latest
+    - name: Run the Docker image
+      run: docker run -d lab3:latest
+    - name: Login to Dockerhub
+      run: docker login -u andrucrut -p Z9500405656z
+    - name: Create tag for docker
+      run: docker tag lab3 andrucrut/lab3:latest
+    - name: Push image to Dockerhub
+      run: docker push andrucrut/lab3:latest
