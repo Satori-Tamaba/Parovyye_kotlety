@@ -10,14 +10,19 @@
 -Checkout Code:
 Использует действие actions/checkout, чтобы получить код из репозитория.
 Далее делаем коммит и пуш в наш репозиторий, открываем github и проверяем в разделе Actions появление workflow. Далее нужно чтобы появилась галочка, которая означает об успешной работе.
+
 -Build Docker Image:
 Выполняет команду для сборки Docker-образа с использованием указанного Dockerfile
+
 -Run Docker Image:
 Запускает созданный Docker-образ
+
 -Login to Dockerhub:
 Авторизуется на Dockerhub, используя предоставленное имя пользователя 
+
 -Create Tag for Docker:
 Создает новый тег для Docker-образа
+
 -Push Image to Dockerhub:
 Отправляет Docker-образ с созданным тегом на Dockerhub 
 
