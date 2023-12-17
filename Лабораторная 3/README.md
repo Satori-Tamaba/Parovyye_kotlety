@@ -17,6 +17,6 @@
 
 ![Image alt](https://github.com/Satori-Tamaba/Parovyye_kotlety/blob/main/Лабораторная%203/img/img-4.png)
 
-#### Вывод
+# Вывод
 
 С помощью github actions мы настроили автоматическую сборку и выгрузку docker образа
